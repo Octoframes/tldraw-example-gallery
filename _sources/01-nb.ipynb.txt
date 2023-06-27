@@ -27,7 +27,11 @@
    "cell_type": "code",
    "execution_count": 2,
    "id": "956c39c3",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -78,7 +82,11 @@
    "cell_type": "code",
    "execution_count": 3,
    "id": "fd52982d-ad44-4c42-9592-4c96dcdb0abf",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -142,7 +150,11 @@
    "cell_type": "code",
    "execution_count": 4,
    "id": "bdf420b9-c2ab-4798-b8a9-052e8b8776df",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -213,7 +225,11 @@
    "cell_type": "code",
    "execution_count": 5,
    "id": "a691d1fa-6180-4019-8bad-abb57c92ec47",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -275,7 +291,11 @@
    "cell_type": "code",
    "execution_count": 6,
    "id": "1c53587c-820e-4bd2-bf7a-e90b8d4f59e1",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -337,7 +357,11 @@
    "cell_type": "code",
    "execution_count": 7,
    "id": "78d219c4",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -403,7 +427,11 @@
    "cell_type": "code",
    "execution_count": 8,
    "id": "47f11ffb-9916-4190-9ba5-4531d11670a9",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
@@ -462,7 +490,11 @@
    "cell_type": "code",
    "execution_count": 9,
    "id": "91c2e9ed-1f7f-4d01-a2c5-76be6bf7ea66",
-   "metadata": {},
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
    "outputs": [
     {
      "data": {
