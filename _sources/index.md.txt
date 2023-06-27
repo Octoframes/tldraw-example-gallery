@@ -1,4 +1,4 @@
-# Sharing manim code.
+# Sharing Tldraw Example code.
 
 Hello World! 
 
@@ -6,13 +6,12 @@ Hello World!
 Content:
 
 ```{toctree}
-nb_manim_example
-interactive1
+01-nb
+02-nb
 ```
 
 Repository on GitHub:  
-<https://github.com/kolibril13/manim_share>
-
+<https://github.com/Octoframes/tldraw-example-gallery>
 
 
 
