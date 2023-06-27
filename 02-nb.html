@@ -214,8 +214,8 @@ export default function App() {
     &lt;div
       style={{
         position: &quot;relative&quot;,
-        width: &quot;800px&quot;,
-        height: &quot;350px&quot;,
+        width: &quot;600px&quot;,
+        height: &quot;200px&quot;,
       }}
     &gt;
       &lt;Tldraw /&gt;
@@ -226,48 +226,207 @@ export default function App() {
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "bfbb9d31ed2d4699a8683e751ef032b4", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2d22e17ac03f493b8e851ce03a508176", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipyreact</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
 
-<span class="k">class</span> <span class="nc">Tldraw</span><span class="p">(</span><span class="n">ipyreact</span><span class="o">.</span><span class="n">ReactWidget</span><span class="p">):</span>
-    <span class="n">_esm</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    import { TDShapeType, Tldraw } from &quot;@tldraw/tldraw&quot;;</span>
-<span class="s2">    import * as React from &quot;react&quot;;</span>
+import { TDShapeType, Tldraw } from &quot;@tldraw/tldraw&quot;;
+import * as React from &quot;react&quot;;
 
-<span class="s2">    export default function App() {</span>
+export default function App() {
 
-<span class="s2">    const handleMount = React.useCallback((app: Tldraw) =&gt; {</span>
+const handleMount = React.useCallback((app: Tldraw) =&gt; {
 
-<span class="s2">        app.createShapes({</span>
-<span class="s2">        id: &quot;rect1&quot;,</span>
-<span class="s2">        type: TDShapeType.Rectangle,</span>
-<span class="s2">        point: [100, 100],</span>
-<span class="s2">        size: [500, 200],</span>
-<span class="s2">        });</span>
-<span class="s2">    });</span>
+    app.createShapes({
+    id: &quot;rect1&quot;,
+    type: TDShapeType.Rectangle,
+    point: [100, 100],
+    size: [400, 200],
+    });
+});
 
-<span class="s2">    return (</span>
-<span class="s2">        &lt;div</span>
-<span class="s2">        style={{</span>
-<span class="s2">            position: &quot;relative&quot;,</span>
-<span class="s2">            width: &quot;800px&quot;,</span>
-<span class="s2">            height: &quot;350px&quot;,</span>
-<span class="s2">        }}</span>
-<span class="s2">        &gt;</span>
-<span class="s2">        &lt;Tldraw onMount=</span><span class="si">{handleMount}</span><span class="s2"> /&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">    );</span>
-<span class="s2">    }</span>
-<span class="s2">    &quot;&quot;&quot;</span>
-<span class="n">Tldraw</span><span class="p">()</span>
+return (
+    &lt;div
+    style={{
+        position: &quot;relative&quot;,
+        width: &quot;600px&quot;,
+        height: &quot;400px&quot;,
+    }}
+    &gt;
+    &lt;Tldraw onMount={handleMount} /&gt;
+    &lt;/div&gt;
+);
+}
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a9acdd65ce5f4dd58af139d4b25c0899", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d033cfad0e9640fa956765e1a335573e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
+import { TDShapeType, Tldraw } from &#39;@tldraw/tldraw&#39;
+import * as React from &#39;react&#39;
+
+
+export default function App() {
+
+const handleMount = React.useCallback((app: Tldraw) =&gt; {
+    app
+    .createShapes({
+    id: &#39;text1&#39;,
+    type: TDShapeType.Text,
+    point: [200, 200],
+    text: &quot;This is Tldrawesome!!🎉&quot;,
+    color: &quot;blue&quot;,
+
+    })
+})
+
+return (
+    &lt;div
+    style={{
+        position: &quot;relative&quot;,
+        width: &quot;800px&quot;,
+        height: &quot;350px&quot;
+    }}
+    &gt;
+    &lt;Tldraw onMount={handleMount} /&gt;
+    &lt;/div&gt;
+)
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5ae10aa2bf01403f96d7b516481c9372", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
+
+import * as React from &quot;react&quot;;
+import { TDAssetType, TDShapeType, Tldraw, TldrawApp } from &quot;@tldraw/tldraw&quot;;
+
+export default function App() {
+  const handleMount = (app: TldrawApp) =&gt; {
+    // You can use the app API here! e.g. app.selectAll()
+    app.patchAssets({
+      myAssetId: {
+        id: &quot;myAssetId&quot;,
+        type: TDAssetType.Image,
+        fileName: &quot;card-repo.png&quot;,
+        src: &quot;https://raw.githubusercontent.com/scikit-image/scikit-image/main/skimage/data/chelsea.png&quot;
+      }
+    });
+
+    app.createShapes({
+      id: &quot;myImage&quot;,
+      type: TDShapeType.Image,
+      assetId: &quot;myAssetId&quot;,
+      point: [64, 64],
+      size: [400, 340]
+    });
+  };
+
+return (
+        &lt;div
+        style={{
+            position: &quot;relative&quot;,
+            width: &quot;800px&quot;,
+            height: &quot;350px&quot;
+        }}
+        &gt;
+        &lt;Tldraw onMount={handleMount} /&gt;
+        &lt;/div&gt;
+    )
+    }
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "edd7cf2a6e82458c86e60b882d4e57ad", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
+
+import { TDExport, TDExportType, Tldraw, TldrawApp } from &#39;@tldraw/tldraw&#39;
+import * as React from &#39;react&#39;
+
+const ACTION = &#39;download&#39; as &#39;download&#39; | &#39;open&#39;
+
+export default function Export() {
+  const handleExport = React.useCallback(async (app: TldrawApp, info: TDExport) =&gt; {
+    // When a user exports, the default behavior is to download
+    // the exported data as a file. If the onExport callback is
+    // provided, it will be called instead.
+
+    switch (ACTION) {
+      case &#39;download&#39;: {
+        // Download the file
+        const blobUrl = URL.createObjectURL(info.blob)
+        const link = document.createElement(&#39;a&#39;)
+        link.href = blobUrl
+        link.download = info.name + &#39;.&#39; + info.type
+        link.click()
+        break
+      }
+      case &#39;open&#39;: {
+        // Open the file in a new tab
+        const blobUrl = URL.createObjectURL(info.blob)
+        const link = document.createElement(&#39;a&#39;)
+        link.href = blobUrl
+        link.target = &#39;_blank&#39;
+        link.click()
+        break
+      }
+    }
+  }, [])
+
+  const [app, setApp] = React.useState&lt;TldrawApp&gt;()
+
+  const handleExportSVG = React.useCallback(() =&gt; {
+    app?.exportImage(TDExportType.SVG, { scale: 1, quality: 1 })
+  }, [app])
+
+  const handleExportPNG = React.useCallback(() =&gt; {
+    app?.exportImage(TDExportType.PNG, { scale: 2, quality: 1 })
+  }, [app])
+
+  const handleExportJPG = React.useCallback(() =&gt; {
+    app?.exportImage(TDExportType.JPG, { scale: 2, quality: 1 })
+  }, [app])
+
+  const handleMount = React.useCallback((app: TldrawApp) =&gt; {
+    setApp(app)
+  }, [])
+
+
+
+  return (
+    &lt;div className=&quot;tldraw&quot; style={{
+            position: &quot;relative&quot;,
+            width: &quot;800px&quot;,
+            height: &quot;350px&quot;
+        }} &gt;
+      &lt;Tldraw id=&quot;export_example&quot; onMount={handleMount} onExport={handleExport} /&gt;
+      &lt;div style={{ position: &#39;relative&#39;, top: 128, left: 32, zIndex: 100 }}&gt;
+        &lt;button onClick={handleExportPNG}&gt;Export as PNG&lt;/button&gt;
+        &lt;button onClick={handleExportSVG}&gt;Export as SVG&lt;/button&gt;
+        &lt;button onClick={handleExportJPG}&gt;Export as JPG&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1216e94416444d2ea6eec22a6808e63b", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 
@@ -321,7 +480,7 @@ export default function App() {
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"06463f6c51b14809ba93afbf3f015d1b": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "1df13d559fa74f999a70e073f0309b21": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_491efe5a95fc410e89c08d16efab85b5", "name": null, "react_version": 18}}, "4145ce3367bf4c09a12818d610ede3e3": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "491efe5a95fc410e89c08d16efab85b5": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "8abbe80b2d894284a4ea641b6b5f9ded": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "a9acdd65ce5f4dd58af139d4b25c0899": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.Tldraw", "_esm": "\n    import { TDShapeType, Tldraw } from \"@tldraw/tldraw\";\n    import * as React from \"react\";\n\n    export default function App() {\n\n    const handleMount = React.useCallback((app: Tldraw) => {\n\n        app.createShapes({\n        id: \"rect1\",\n        type: TDShapeType.Rectangle,\n        point: [100, 100],\n        size: [500, 200],\n        });\n    });\n\n    return (\n        <div\n        style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\",\n        }}\n        >\n        <Tldraw onMount={handleMount} />\n        </div>\n    );\n    }\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_06463f6c51b14809ba93afbf3f015d1b", "name": null, "react_version": 18}}, "bfbb9d31ed2d4699a8683e751ef032b4": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_4145ce3367bf4c09a12818d610ede3e3", "name": null, "react_version": 18}}, "c3fe057d231f4cba8cff1ceaca93f5fb": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.MyExampleWidget", "_esm": "\n    import * as React from \"react\";\n\n    export default function MyButton() {\n        return < button > X < /button> \n    };", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_cc0e7a9451b4434eb8688978bde88932", "name": null, "react_version": 18}}, "cc0e7a9451b4434eb8688978bde88932": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "f0be2b8af9e54002b7a17631934c56bb": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_8abbe80b2d894284a4ea641b6b5f9ded", "name": null, "react_version": 18}}}, "version_major": 2, "version_minor": 0}</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"06463f6c51b14809ba93afbf3f015d1b": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "0a07ca4e66144af6bc5ab78def870b88": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "1216e94416444d2ea6eec22a6808e63b": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import { TDExport, TDExportType, Tldraw, TldrawApp } from '@tldraw/tldraw'\nimport * as React from 'react'\n\nconst ACTION = 'download' as 'download' | 'open'\n\nexport default function Export() {\n  const handleExport = React.useCallback(async (app: TldrawApp, info: TDExport) => {\n    // When a user exports, the default behavior is to download\n    // the exported data as a file. If the onExport callback is\n    // provided, it will be called instead.\n\n    switch (ACTION) {\n      case 'download': {\n        // Download the file\n        const blobUrl = URL.createObjectURL(info.blob)\n        const link = document.createElement('a')\n        link.href = blobUrl\n        link.download = info.name + '.' + info.type\n        link.click()\n        break\n      }\n      case 'open': {\n        // Open the file in a new tab\n        const blobUrl = URL.createObjectURL(info.blob)\n        const link = document.createElement('a')\n        link.href = blobUrl\n        link.target = '_blank'\n        link.click()\n        break\n      }\n    }\n  }, [])\n\n  const [app, setApp] = React.useState<TldrawApp>()\n\n  const handleExportSVG = React.useCallback(() => {\n    app?.exportImage(TDExportType.SVG, { scale: 1, quality: 1 })\n  }, [app])\n\n  const handleExportPNG = React.useCallback(() => {\n    app?.exportImage(TDExportType.PNG, { scale: 2, quality: 1 })\n  }, [app])\n\n  const handleExportJPG = React.useCallback(() => {\n    app?.exportImage(TDExportType.JPG, { scale: 2, quality: 1 })\n  }, [app])\n\n  const handleMount = React.useCallback((app: TldrawApp) => {\n    setApp(app)\n  }, [])\n\n\n\n  return (\n    <div className=\"tldraw\" style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\"\n        }} >\n      <Tldraw id=\"export_example\" onMount={handleMount} onExport={handleExport} />\n      <div style={{ position: 'relative', top: 128, left: 32, zIndex: 100 }}>\n        <button onClick={handleExportPNG}>Export as PNG</button>\n        <button onClick={handleExportSVG}>Export as SVG</button>\n        <button onClick={handleExportJPG}>Export as JPG</button>\n      </div>\n    </div>\n  )\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_f4103de634fc4cf288d7f3fe7d5b5ffa", "name": null, "react_version": 18}}, "1df13d559fa74f999a70e073f0309b21": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_491efe5a95fc410e89c08d16efab85b5", "name": null, "react_version": 18}}, "2d22e17ac03f493b8e851ce03a508176": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"600px\",\n        height: \"200px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_38205e3954cd4e4f89cc8ac7ab59c4dc", "name": null, "react_version": 18}}, "38205e3954cd4e4f89cc8ac7ab59c4dc": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "4145ce3367bf4c09a12818d610ede3e3": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "491efe5a95fc410e89c08d16efab85b5": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "5ae10aa2bf01403f96d7b516481c9372": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import { TDShapeType, Tldraw } from '@tldraw/tldraw'\nimport * as React from 'react'\n\n\nexport default function App() {\n\nconst handleMount = React.useCallback((app: Tldraw) => {\n    app\n    .createShapes({\n    id: 'text1',\n    type: TDShapeType.Text,\n    point: [200, 200],\n    text: \"This is Tldrawesome!!\ud83c\udf89\",\n    color: \"blue\",\n\n    })\n})\n\nreturn (\n    <div\n    style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\"\n    }}\n    >\n    <Tldraw onMount={handleMount} />\n    </div>\n)\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_74299c5f82bf4a90ade17fd954ff4306", "name": null, "react_version": 18}}, "74299c5f82bf4a90ade17fd954ff4306": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "8abbe80b2d894284a4ea641b6b5f9ded": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "a9acdd65ce5f4dd58af139d4b25c0899": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.Tldraw", "_esm": "\n    import { TDShapeType, Tldraw } from \"@tldraw/tldraw\";\n    import * as React from \"react\";\n\n    export default function App() {\n\n    const handleMount = React.useCallback((app: Tldraw) => {\n\n        app.createShapes({\n        id: \"rect1\",\n        type: TDShapeType.Rectangle,\n        point: [100, 100],\n        size: [500, 200],\n        });\n    });\n\n    return (\n        <div\n        style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\",\n        }}\n        >\n        <Tldraw onMount={handleMount} />\n        </div>\n    );\n    }\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_06463f6c51b14809ba93afbf3f015d1b", "name": null, "react_version": 18}}, "bfbb9d31ed2d4699a8683e751ef032b4": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_4145ce3367bf4c09a12818d610ede3e3", "name": null, "react_version": 18}}, "c3fe057d231f4cba8cff1ceaca93f5fb": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.MyExampleWidget", "_esm": "\n    import * as React from \"react\";\n\n    export default function MyButton() {\n        return < button > X < /button> \n    };", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_cc0e7a9451b4434eb8688978bde88932", "name": null, "react_version": 18}}, "cc0e7a9451b4434eb8688978bde88932": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "d033cfad0e9640fa956765e1a335573e": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import { TDShapeType, Tldraw } from \"@tldraw/tldraw\";\nimport * as React from \"react\";\n\nexport default function App() {\n\nconst handleMount = React.useCallback((app: Tldraw) => {\n\n    app.createShapes({\n    id: \"rect1\",\n    type: TDShapeType.Rectangle,\n    point: [100, 100],\n    size: [400, 200],\n    });\n});\n\nreturn (\n    <div\n    style={{\n        position: \"relative\",\n        width: \"600px\",\n        height: \"400px\",\n    }}\n    >\n    <Tldraw onMount={handleMount} />\n    </div>\n);\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_0a07ca4e66144af6bc5ab78def870b88", "name": null, "react_version": 18}}, "e4f485205e2e4bee9b8442adbd985a26": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "edd7cf2a6e82458c86e60b882d4e57ad": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { TDAssetType, TDShapeType, Tldraw, TldrawApp } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  const handleMount = (app: TldrawApp) => {\n    // You can use the app API here! e.g. app.selectAll()\n    app.patchAssets({\n      myAssetId: {\n        id: \"myAssetId\",\n        type: TDAssetType.Image,\n        fileName: \"card-repo.png\",\n        src: \"https://raw.githubusercontent.com/scikit-image/scikit-image/main/skimage/data/chelsea.png\"\n      }\n    });\n\n    app.createShapes({\n      id: \"myImage\",\n      type: TDShapeType.Image,\n      assetId: \"myAssetId\",\n      point: [64, 64],\n      size: [400, 340]\n    });\n  };\n\nreturn (\n        <div\n        style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\"\n        }}\n        >\n        <Tldraw onMount={handleMount} />\n        </div>\n    )\n    }\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_e4f485205e2e4bee9b8442adbd985a26", "name": null, "react_version": 18}}, "f0be2b8af9e54002b7a17631934c56bb": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_8abbe80b2d894284a4ea641b6b5f9ded", "name": null, "react_version": 18}}, "f4103de634fc4cf288d7f3fe7d5b5ffa": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}}, "version_major": 2, "version_minor": 0}</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     </body>
