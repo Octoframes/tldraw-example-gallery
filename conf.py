@@ -7,10 +7,10 @@ language = 'en'
 
 # html_static_path = ['_static']
 
-project = 'Manim Share'
+project = 'Tldraw Examples'
 # copyright = ''
 # author = ''
-html_title = "Manim Share"
+html_title = "Tldraw Examples"
 
 # specify project details
 master_doc = "index"
