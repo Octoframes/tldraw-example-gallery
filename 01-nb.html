@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Second example with TLDRAW" href="02-nb.html" /><link rel="prev" title="Sharing Tldraw Example code." href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="More stuff" href="02-nb.html" /><link rel="prev" title="Sharing Tldraw Example code." href="index.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>First Example - Tldraw Examples</title>
+        <title>Tldraw Gallery - Tldraw Examples</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -157,8 +157,8 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">First Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-nb.html">Second example with TLDRAW</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Tldraw Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-nb.html">More stuff</a></li>
 </ul>
 
 </div>
@@ -187,52 +187,184 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="first-example">
-<h1>First Example<a class="headerlink" href="#first-example" title="Permalink to this heading">#</a></h1>
+          <section id="tldraw-gallery">
+<h1>Tldraw Gallery<a class="headerlink" href="#tldraw-gallery" title="Permalink to this heading">#</a></h1>
+<section id="the-basics">
+<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipyreact</span>
-<span class="kn">from</span> <span class="nn">traitlets</span> <span class="kn">import</span> <span class="n">Unicode</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> ipyreact
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
 
-<span class="k">class</span> <span class="nc">QRCodeWidget</span><span class="p">(</span><span class="n">ipyreact</span><span class="o">.</span><span class="n">ReactWidget</span><span class="p">):</span>
-    <span class="n">content</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">_esm</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    import React from &quot;react&quot;;</span>
-<span class="s2">    import QRCode from &quot;react-qr-code&quot;;</span>
+import * as React from &quot;react&quot;;
+import { Tldraw } from &quot;@tldraw/tldraw&quot;;
 
-<span class="s2">    export default function App({ content }) {</span>
-<span class="s2">      return &lt;QRCode value=</span><span class="si">{content}</span><span class="s2"> /&gt;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    &quot;&quot;&quot;</span>
-
-<span class="n">QRCodeWidget</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+export default function App() {
+  return (
+    &lt;div
+      style={{
+        position: &quot;relative&quot;,
+        width: &quot;600px&quot;,
+        height: &quot;200px&quot;,
+      }}
+    &gt;
+      &lt;Tldraw /&gt;
+    &lt;/div&gt;
+  );
+}
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "01d40f3c88b2499fbd4ff596164159b0", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2d22e17ac03f493b8e851ce03a508176", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get version of ipywidgets</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span>
-<span class="n">ipywidgets</span><span class="o">.</span><span class="n">__version__</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
+
+import { TDShapeType, Tldraw } from &quot;@tldraw/tldraw&quot;;
+import * as React from &quot;react&quot;;
+
+export default function App() {
+
+const handleMount = React.useCallback((app: Tldraw) =&gt; {
+
+    app.createShapes({
+    id: &quot;rect1&quot;,
+    type: TDShapeType.Rectangle,
+    point: [100, 100],
+    size: [400, 200],
+    });
+});
+
+return (
+    &lt;div
+    style={{
+        position: &quot;relative&quot;,
+        width: &quot;600px&quot;,
+        height: &quot;400px&quot;,
+    }}
+    &gt;
+    &lt;Tldraw onMount={handleMount} /&gt;
+    &lt;/div&gt;
+);
+}
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;8.0.6&#39;
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d033cfad0e9640fa956765e1a335573e", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
+import { TDShapeType, Tldraw } from &#39;@tldraw/tldraw&#39;
+import * as React from &#39;react&#39;
+
+
+export default function App() {
+
+const handleMount = React.useCallback((app: Tldraw) =&gt; {
+    app
+    .createShapes({
+    id: &#39;text1&#39;,
+    type: TDShapeType.Text,
+    point: [200, 200],
+    text: &quot;This is Tldrawesome!!🎉&quot;,
+    color: &quot;blue&quot;,
+
+    })
+})
+
+return (
+    &lt;div
+    style={{
+        position: &quot;relative&quot;,
+        width: &quot;800px&quot;,
+        height: &quot;350px&quot;
+    }}
+    &gt;
+    &lt;Tldraw onMount={handleMount} /&gt;
+    &lt;/div&gt;
+)
+}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5ae10aa2bf01403f96d7b516481c9372", "version_major": 2, "version_minor": 0}</script></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">react</span>
+
+import * as React from &quot;react&quot;;
+import { TDAssetType, TDShapeType, Tldraw, TldrawApp } from &quot;@tldraw/tldraw&quot;;
+
+export default function App() {
+  const handleMount = (app: TldrawApp) =&gt; {
+    // You can use the app API here! e.g. app.selectAll()
+    app.patchAssets({
+      myAssetId: {
+        id: &quot;myAssetId&quot;,
+        type: TDAssetType.Image,
+        fileName: &quot;card-repo.png&quot;,
+        src: &quot;https://raw.githubusercontent.com/scikit-image/scikit-image/main/skimage/data/chelsea.png&quot;
+      }
+    });
+
+    app.createShapes({
+      id: &quot;myImage&quot;,
+      type: TDShapeType.Image,
+      assetId: &quot;myAssetId&quot;,
+      point: [64, 64],
+      size: [400, 340]
+    });
+  };
+
+return (
+        &lt;div
+        style={{
+            position: &quot;relative&quot;,
+            width: &quot;800px&quot;,
+            height: &quot;350px&quot;
+        }}
+        &gt;
+        &lt;Tldraw onMount={handleMount} /&gt;
+        &lt;/div&gt;
+    )
+    }
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "edd7cf2a6e82458c86e60b882d4e57ad", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+<section id="the-gui">
+<h2>The GUI<a class="headerlink" href="#the-gui" title="Permalink to this heading">#</a></h2>
+<p>Some examples how to show and Hide GUI elements.</p>
+</section>
+<section id="another-example">
+<h2>Another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
+<p>Lalalala</p>
+<section id="in-detail">
+<h3>in detail<a class="headerlink" href="#in-detail" title="Permalink to this heading">#</a></h3>
+<p>blalabla</p>
+</section>
+</section>
 </section>
 
         </article>
@@ -245,7 +377,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Second example with TLDRAW</div>
+                <div class="title">More stuff</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -278,8 +410,32 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Tldraw Gallery</a><ul>
+<li><a class="reference internal" href="#the-basics">The Basics</a></li>
+<li><a class="reference internal" href="#the-gui">The GUI</a></li>
+<li><a class="reference internal" href="#another-example">Another example</a><ul>
+<li><a class="reference internal" href="#in-detail">in detail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -293,7 +449,7 @@
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"01d40f3c88b2499fbd4ff596164159b0": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.QRCodeWidget", "_esm": "\n    import React from \"react\";\n    import QRCode from \"react-qr-code\";\n\n    export default function App({ content }) {\n      return <QRCode value={content} />\n    }\n\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "content": "Hello World", "debug": false, "layout": "IPY_MODEL_19175446e0bc49ec81ec2e48b096a9ca", "name": null, "react_version": 18}}, "0598d9a3ee894de3ab9b2425321e72d9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextStyleModel", "state": {"description_width": "", "font_size": null, "text_color": null}}, "0ab9d296e8564fc9a4e0656ce7364c34": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "IntSliderModel", "state": {"behavior": "drag-tap", "continuous_update": false, "description": "Test:", "layout": "IPY_MODEL_a19dfea431c549aaab1a8b4224401817", "max": 10, "style": "IPY_MODEL_8216ba79a9c34179be25bea5e7016969", "value": 7}}, "0e86aa25b27e4a93bdb8ebd388712c84": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "19175446e0bc49ec81ec2e48b096a9ca": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "1fad984c6bd04ace8e86eaac084db67c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextStyleModel", "state": {"description_width": "", "font_size": null, "text_color": null}}, "240966316b314305ba3d174417879cef": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "261e242e29ad45fea4a11c62fb7e62bf": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextModel", "state": {"description": "P0", "layout": "IPY_MODEL_240966316b314305ba3d174417879cef", "style": "IPY_MODEL_1fad984c6bd04ace8e86eaac084db67c"}}, "2df24bd400c0492282556f60d7b8d759": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "318c7f05829c4998b157fd31f762be59": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextModel", "state": {"description": "P3", "layout": "IPY_MODEL_82394df750924662b4a255fce9d73900", "style": "IPY_MODEL_31a107fe08f54ba690f7eeda6bb1ade8"}}, "31a107fe08f54ba690f7eeda6bb1ade8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextStyleModel", "state": {"description_width": "", "font_size": null, "text_color": null}}, "3678753b2b764b808296afed21d874a1": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextStyleModel", "state": {"description_width": "", "font_size": null, "text_color": null}}, "36e1554bcf294cecb8da9d1129e584cb": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TabModel", "state": {"children": ["IPY_MODEL_261e242e29ad45fea4a11c62fb7e62bf", "IPY_MODEL_95ecd70bba6f49889254439a3c7e0bf3", "IPY_MODEL_c9a50fbd639e48cfb57bb15cc027292a", "IPY_MODEL_318c7f05829c4998b157fd31f762be59", "IPY_MODEL_f9fa76b6bd2148c58f4276f43ce553f9"], "layout": "IPY_MODEL_47763eedd2d64892be08af6f51fbd976", "selected_index": 0, "titles": ["tab_0", "tab_1", "tab_2", "tab_3", "tab_4"]}}, "44bdb03b3ab74c7095b8eb5d03b6dad8": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.QRCodeWidget", "_esm": "\n    import React from \"react\";\n    import QRCode from \"react-qr-code\";\n\n    export default function App({ content }) {\n      return <QRCode value={content} />\n    }\n\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "content": "Hello World", "debug": false, "layout": "IPY_MODEL_0e86aa25b27e4a93bdb8ebd388712c84", "name": null, "react_version": 18}}, "459eb687a0a646a8922e3b7c4206e11d": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "47763eedd2d64892be08af6f51fbd976": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "662a5388f7f34191a613ecd945d855f0": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.QRCodeWidget", "_esm": "\n    import React from \"react\";\n    import QRCode from \"react-qr-code\";\n\n    export default function App({ content }) {\n      return <QRCode value={content} />\n    }\n\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "content": "Hello World", "debug": false, "layout": "IPY_MODEL_2df24bd400c0492282556f60d7b8d759", "name": null, "react_version": 18}}, "8216ba79a9c34179be25bea5e7016969": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "82394df750924662b4a255fce9d73900": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "9180db893c6840afa4fbcab992483dc8": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "95ecd70bba6f49889254439a3c7e0bf3": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextModel", "state": {"description": "P1", "layout": "IPY_MODEL_9180db893c6840afa4fbcab992483dc8", "style": "IPY_MODEL_3678753b2b764b808296afed21d874a1"}}, "99df03700f8b4c75982ab93ee59c61c6": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.QRCodeWidget", "_esm": "\n    import React from \"react\";\n    import QRCode from \"react-qr-code\";\n\n    export default function App({ content }) {\n      return <QRCode value={content} />\n    }\n\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "content": "Hello World", "debug": false, "layout": "IPY_MODEL_a83d8081c0f34397a15dfc8c70913ef8", "name": null, "react_version": 18}}, "a19dfea431c549aaab1a8b4224401817": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "a83d8081c0f34397a15dfc8c70913ef8": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "c9a50fbd639e48cfb57bb15cc027292a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextModel", "state": {"description": "P2", "layout": "IPY_MODEL_eb52f49a6d404f5ca4a96fd9287dbf41", "style": "IPY_MODEL_f5f22419920541d5905a15151e5c5b64"}}, "ca204718fa96474980b97bbec65b3eb1": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "d48cfa97f3f44e518936d3f70561e451": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.QRCodeWidget", "_esm": "\n    import React from \"react\";\n    import QRCode from \"react-qr-code\";\n\n    export default function App({ content }) {\n      return <QRCode value={content} />\n    }\n\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "content": "Hello World", "debug": false, "layout": "IPY_MODEL_ca204718fa96474980b97bbec65b3eb1", "name": null, "react_version": 18}}, "eb52f49a6d404f5ca4a96fd9287dbf41": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "f5f22419920541d5905a15151e5c5b64": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextStyleModel", "state": {"description_width": "", "font_size": null, "text_color": null}}, "f9fa76b6bd2148c58f4276f43ce553f9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "TextModel", "state": {"description": "P4", "layout": "IPY_MODEL_459eb687a0a646a8922e3b7c4206e11d", "style": "IPY_MODEL_0598d9a3ee894de3ab9b2425321e72d9"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"06463f6c51b14809ba93afbf3f015d1b": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "0a07ca4e66144af6bc5ab78def870b88": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "1216e94416444d2ea6eec22a6808e63b": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import { TDExport, TDExportType, Tldraw, TldrawApp } from '@tldraw/tldraw'\nimport * as React from 'react'\n\nconst ACTION = 'download' as 'download' | 'open'\n\nexport default function Export() {\n  const handleExport = React.useCallback(async (app: TldrawApp, info: TDExport) => {\n    // When a user exports, the default behavior is to download\n    // the exported data as a file. If the onExport callback is\n    // provided, it will be called instead.\n\n    switch (ACTION) {\n      case 'download': {\n        // Download the file\n        const blobUrl = URL.createObjectURL(info.blob)\n        const link = document.createElement('a')\n        link.href = blobUrl\n        link.download = info.name + '.' + info.type\n        link.click()\n        break\n      }\n      case 'open': {\n        // Open the file in a new tab\n        const blobUrl = URL.createObjectURL(info.blob)\n        const link = document.createElement('a')\n        link.href = blobUrl\n        link.target = '_blank'\n        link.click()\n        break\n      }\n    }\n  }, [])\n\n  const [app, setApp] = React.useState<TldrawApp>()\n\n  const handleExportSVG = React.useCallback(() => {\n    app?.exportImage(TDExportType.SVG, { scale: 1, quality: 1 })\n  }, [app])\n\n  const handleExportPNG = React.useCallback(() => {\n    app?.exportImage(TDExportType.PNG, { scale: 2, quality: 1 })\n  }, [app])\n\n  const handleExportJPG = React.useCallback(() => {\n    app?.exportImage(TDExportType.JPG, { scale: 2, quality: 1 })\n  }, [app])\n\n  const handleMount = React.useCallback((app: TldrawApp) => {\n    setApp(app)\n  }, [])\n\n\n\n  return (\n    <div className=\"tldraw\" style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\"\n        }} >\n      <Tldraw id=\"export_example\" onMount={handleMount} onExport={handleExport} />\n      <div style={{ position: 'relative', top: 128, left: 32, zIndex: 100 }}>\n        <button onClick={handleExportPNG}>Export as PNG</button>\n        <button onClick={handleExportSVG}>Export as SVG</button>\n        <button onClick={handleExportJPG}>Export as JPG</button>\n      </div>\n    </div>\n  )\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_f4103de634fc4cf288d7f3fe7d5b5ffa", "name": null, "react_version": 18}}, "1df13d559fa74f999a70e073f0309b21": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_491efe5a95fc410e89c08d16efab85b5", "name": null, "react_version": 18}}, "2d22e17ac03f493b8e851ce03a508176": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"600px\",\n        height: \"200px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_38205e3954cd4e4f89cc8ac7ab59c4dc", "name": null, "react_version": 18}}, "38205e3954cd4e4f89cc8ac7ab59c4dc": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "4145ce3367bf4c09a12818d610ede3e3": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "491efe5a95fc410e89c08d16efab85b5": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "5ae10aa2bf01403f96d7b516481c9372": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import { TDShapeType, Tldraw } from '@tldraw/tldraw'\nimport * as React from 'react'\n\n\nexport default function App() {\n\nconst handleMount = React.useCallback((app: Tldraw) => {\n    app\n    .createShapes({\n    id: 'text1',\n    type: TDShapeType.Text,\n    point: [200, 200],\n    text: \"This is Tldrawesome!!\ud83c\udf89\",\n    color: \"blue\",\n\n    })\n})\n\nreturn (\n    <div\n    style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\"\n    }}\n    >\n    <Tldraw onMount={handleMount} />\n    </div>\n)\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_74299c5f82bf4a90ade17fd954ff4306", "name": null, "react_version": 18}}, "74299c5f82bf4a90ade17fd954ff4306": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "8abbe80b2d894284a4ea641b6b5f9ded": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "a9acdd65ce5f4dd58af139d4b25c0899": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.Tldraw", "_esm": "\n    import { TDShapeType, Tldraw } from \"@tldraw/tldraw\";\n    import * as React from \"react\";\n\n    export default function App() {\n\n    const handleMount = React.useCallback((app: Tldraw) => {\n\n        app.createShapes({\n        id: \"rect1\",\n        type: TDShapeType.Rectangle,\n        point: [100, 100],\n        size: [500, 200],\n        });\n    });\n\n    return (\n        <div\n        style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\",\n        }}\n        >\n        <Tldraw onMount={handleMount} />\n        </div>\n    );\n    }\n    ", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_06463f6c51b14809ba93afbf3f015d1b", "name": null, "react_version": 18}}, "bfbb9d31ed2d4699a8683e751ef032b4": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_4145ce3367bf4c09a12818d610ede3e3", "name": null, "react_version": 18}}, "c3fe057d231f4cba8cff1ceaca93f5fb": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "__main__.MyExampleWidget", "_esm": "\n    import * as React from \"react\";\n\n    export default function MyButton() {\n        return < button > X < /button> \n    };", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_cc0e7a9451b4434eb8688978bde88932", "name": null, "react_version": 18}}, "cc0e7a9451b4434eb8688978bde88932": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "d033cfad0e9640fa956765e1a335573e": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import { TDShapeType, Tldraw } from \"@tldraw/tldraw\";\nimport * as React from \"react\";\n\nexport default function App() {\n\nconst handleMount = React.useCallback((app: Tldraw) => {\n\n    app.createShapes({\n    id: \"rect1\",\n    type: TDShapeType.Rectangle,\n    point: [100, 100],\n    size: [400, 200],\n    });\n});\n\nreturn (\n    <div\n    style={{\n        position: \"relative\",\n        width: \"600px\",\n        height: \"400px\",\n    }}\n    >\n    <Tldraw onMount={handleMount} />\n    </div>\n);\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_0a07ca4e66144af6bc5ab78def870b88", "name": null, "react_version": 18}}, "e4f485205e2e4bee9b8442adbd985a26": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "edd7cf2a6e82458c86e60b882d4e57ad": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { TDAssetType, TDShapeType, Tldraw, TldrawApp } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  const handleMount = (app: TldrawApp) => {\n    // You can use the app API here! e.g. app.selectAll()\n    app.patchAssets({\n      myAssetId: {\n        id: \"myAssetId\",\n        type: TDAssetType.Image,\n        fileName: \"card-repo.png\",\n        src: \"https://raw.githubusercontent.com/scikit-image/scikit-image/main/skimage/data/chelsea.png\"\n      }\n    });\n\n    app.createShapes({\n      id: \"myImage\",\n      type: TDShapeType.Image,\n      assetId: \"myAssetId\",\n      point: [64, 64],\n      size: [400, 340]\n    });\n  };\n\nreturn (\n        <div\n        style={{\n            position: \"relative\",\n            width: \"800px\",\n            height: \"350px\"\n        }}\n        >\n        <Tldraw onMount={handleMount} />\n        </div>\n    )\n    }\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_e4f485205e2e4bee9b8442adbd985a26", "name": null, "react_version": 18}}, "f0be2b8af9e54002b7a17631934c56bb": {"model_module": "@widgetti/jupyter-react", "model_module_version": "^0.3.0", "model_name": "ReactModel", "state": {"_anywidget_id": "ipyreact.cellmagic.Widget", "_esm": "import * as React from \"react\";\nimport { Tldraw } from \"@tldraw/tldraw\";\n\nexport default function App() {\n  return (\n    <div\n      style={{\n        position: \"relative\",\n        width: \"800px\",\n        height: \"350px\",\n      }}\n    >\n      <Tldraw />\n    </div>\n  );\n}\n", "_event_names": [], "_import_map": {"imports": {"@mui/icons-material/": "https://esm.sh/@mui/icons-material/", "@mui/material/": "https://esm.sh/@mui/material@5.11.10/", "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0"}, "scopes": {}}, "_model_module_version": "^0.3.0", "_view_module_version": "^0.3.0", "debug": false, "layout": "IPY_MODEL_8abbe80b2d894284a4ea641b6b5f9ded", "name": null, "react_version": 18}}, "f4103de634fc4cf288d7f3fe7d5b5ffa": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}}, "version_major": 2, "version_minor": 0}</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     </body>
